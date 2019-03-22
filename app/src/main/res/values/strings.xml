@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">wifiStrength</string>
+    <string name="buttonText">Click here to see WiFi Strength</string>
 </resources>

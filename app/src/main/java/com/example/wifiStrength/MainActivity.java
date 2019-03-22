@@ -1,11 +1,11 @@
 package com.example.wifiStrength;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
@@ -13,10 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.IOException;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtWifiInfo = (TextView) findViewById(R.id.idTxt);
-        btnInfo = (Button) findViewById(R.id.idBtn);
+        txtWifiInfo = findViewById(R.id.idTxt);
+        btnInfo = findViewById(R.id.idBtn);
     }
 
     public void getWifiInfo(View view) {
@@ -41,13 +41,12 @@ public class MainActivity extends AppCompatActivity {
             if (String.valueOf(wifiInfo.getSupplicantState()).equals("COMPLETED")) {
                 String SSId = wifiInfo.getSSID();
 
-                Log.i("Wifi Ki chut","SSID: "+SSId);
                 Toast.makeText(this,  SSId, Toast.LENGTH_SHORT).show();
                 int rssid = wifiInfo.getRssi();
                 String ssid = wifiInfo.getSSID();
                 String bssid = wifiInfo.getBSSID();
 // wifiInfo.getFrequency();
-                int level = WifiManager.calculateSignalLevel(wifiInfo.getRssi(), 5);
+                int level = WifiManager.calculateSignalLevel(wifiInfo.getRssi(), 6);
                 int ip = wifiInfo.getIpAddress();
                 String ipaddress = Formatter.formatIpAddress(ip);
                 int linkspeed = wifiInfo.getLinkSpeed();
