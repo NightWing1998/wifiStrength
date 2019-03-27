@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         btnInfo = findViewById(R.id.idBtn);
     }
 
+    public void openExplorer(View v){
+        Log.i("External path:",this.getExternalFilesDir(null).getAbsolutePath());
+    }
+
     public void getWifiInfo(View view) {
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         if (wifiManager.isWifiEnabled()) {
