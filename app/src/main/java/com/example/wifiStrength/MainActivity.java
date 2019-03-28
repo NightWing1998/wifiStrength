@@ -1,10 +1,14 @@
 package com.example.wifiStrength;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.Formatter;
 import android.util.Log;
@@ -34,8 +38,15 @@ public class MainActivity extends AppCompatActivity {
         btnInfo = findViewById(R.id.idBtn);
     }
 
-    public void openExplorer(View v){
-        Log.i("External path:",this.getExternalFilesDir(null).getAbsolutePath());
+    public void openExplorer(View view){
+
+        Intent i = new Intent(this.getApplicationContext(), textfile.class);
+        i.putExtra("Value1", "Android By Javatpoint");
+        i.putExtra("Value2", "Simple Tutorial");
+        // Set the request code to any code you like, you can identify the
+        // callback via this code
+        startActivity(i);
+
     }
 
     public void getWifiInfo(View view) {

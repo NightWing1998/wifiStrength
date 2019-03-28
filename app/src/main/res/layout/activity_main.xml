@@ -65,6 +65,19 @@
         app:layout_constraintVertical_bias="1.0"
         tools:theme="@android:style/Theme.Material" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="176dp"
+        app:layout_constraintBottom_toTopOf="@+id/idBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idTxt"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <!--</RelativeLayout>-->
 
