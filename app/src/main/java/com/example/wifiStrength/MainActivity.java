@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     public void openExplorer(View view){
 
         Intent i = new Intent(this.getApplicationContext(), TestActivity.class);
-        i.putExtra("Value1", "Android By Javatpoint");
-        i.putExtra("Value2", "Simple Tutorial");
+        i.putExtra("Value3", "file://"+this.getExternalFilesDir(null)+"/timeStamp.txt");
+//        Toast.makeText(getApplicationContext(), "file://"+this.getExternalFilesDir(null)+"/timeStamp.txt" , Toast.LENGTH_LONG).show();
         // Set the request code to any code you like, you can identify the
         // callback via this code
         startActivity(i);

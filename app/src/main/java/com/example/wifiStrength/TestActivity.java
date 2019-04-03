@@ -14,11 +14,8 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.textfile);
+        setContentView(R.layout.activity_test);
         Bundle extras = getIntent().getExtras();
-        String value1 = extras.getString("Value1");
-        String value2 = extras.getString("Value2");
-        Toast.makeText(getApplicationContext(),"Values are:\n First value: "+value1+"\n Second Value: "+value2, Toast.LENGTH_LONG).show();
         webView = (WebView) findViewById(R.id.fileOutput);
 
         webView.setWebViewClient(new MyWebViewClient());
@@ -27,7 +24,7 @@ public class TestActivity extends AppCompatActivity {
 //        webSettings.setAllowUniversalAccessFromFileURLs(true);
         webSettings.setJavaScriptEnabled(true);
 
-        webView.loadUrl("https://www.journaldev.com");
+        webView.loadUrl( extras.getString("Value3","https://www.journaldev.com") );
     }
 
     private class MyWebViewClient extends WebViewClient {
