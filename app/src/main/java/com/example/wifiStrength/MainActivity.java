@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openExplorer(View view){
 
-        Intent i = new Intent(this.getApplicationContext(), textfile.class);
+        Intent i = new Intent(this.getApplicationContext(), TestActivity.class);
         i.putExtra("Value1", "Android By Javatpoint");
         i.putExtra("Value2", "Simple Tutorial");
         // Set the request code to any code you like, you can identify the
